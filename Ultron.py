@@ -66,34 +66,36 @@ def main():
     query = takecommand()
 
     # Logic for excecuting task
-
+# For launching Wikipedia.com
     if "wikipedia" in query.lower():
         speak('Searching wikipedia...')
         query= query.replace("wikipedia", "")
         results= wikipedia.summary(query,sentences=2)
         print(results)
         speak(results)
-
+# For launching Youtube.com
     elif 'open youtube' in query.lower():
         speak('Opening Youtube')
         url='https://www.youtube.com/'
         # Windows
         chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
         webbrowser.get(chrome_path).open(url)
-
+        
+# For launching Flipkart.com
     elif 'open flipkart' in query.lower():
         speak('Opening Flipkart')
         url='https://www.flipkart.com/?gclid=EAIaIQobChMI4dXx1Zq67QIVRw4rCh1_egoTEAAYASAAEgLPc_D_BwE&ef_id=EAIaIQobChMI4dXx1Zq67QIVRw4rCh1_egoTEAAYASAAEgLPc_D_BwE:G:s&s_kwcid=AL!739!3!354086747743!e!!g!!flipkart&gclsrc=aw.ds&&semcmpid=sem_8024046704_brand_city_goog'
         chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
         webbrowser.get(chrome_path).open(url)
-
+        
+# For launching Amazon.com
     elif 'open amazon' in query.lower():
         speak('Opening Amazon')
         url='https://www.amazon.in/ref=nav_logo'
         # Windows
         chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
         webbrowser.get(chrome_path).open(url)
-
+# For launching Google.com
     elif 'open google' in query.lower():
         speak('Opening Google')
         url='https://www.google.com/'
@@ -109,17 +111,18 @@ def main():
         strTime =datetime.datetime.now().strftime("%H,%M:%S")
         speak(f"The time is {strTime}")
         
-
+# For opening VS code 
     elif 'open code' in query.lower():
         speak('Opening VS code')
         codepath=" " # put file location here
         os.startfile(codepath)
-
-    
+        
+# For opening music app 
     elif 'open music' in query.lower():
         codepath=""# put file location here
         os.startfile(codepath)
-
+        
+# For taking Screeshots
     elif "take screenshot" in query.lower() or "take a screenshot" in query.lower():
         speak("Sir please tell me the name of this screenshot file")
         name=takecommand().lower()
